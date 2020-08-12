@@ -25,12 +25,14 @@
       "plugin:cypress/recommended"
     ]
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.js": [
-      "yarn test --bail --findRelatedTests"
+      "cross-env CI=true yarn test --bail --findRelatedTests"
     ]
   },
   "browserslist": {
@@ -49,6 +51,7 @@
     "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
+    "husky": "^4.2.5",
     "lint-staged": "^10.2.11"
   }
 }
