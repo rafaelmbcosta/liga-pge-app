@@ -25,6 +25,17 @@ strong {
   font: 600 1.6rem Poppins;
 }
 span {
-  margin-left: 1.5rem;
   font: 500 1.6rem Archivo;
+  margin-left: 4.5rem;
+}
+
+#card-list-teams {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "image time player switch";
+}
+
+.switch {
+  margin-left: 15rem;
 }

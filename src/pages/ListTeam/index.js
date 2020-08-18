@@ -5,7 +5,7 @@ import listTeam from '../../api/listTeam';
 
 import './styles.css';
 
-function TeamsEngine() {
+const ListTeam = () => {
   return (
     <>
       <h1>Teams Engines</h1>
@@ -13,14 +13,20 @@ function TeamsEngine() {
         <div key={team.id} id="card-list-teams">
           <div className="team-container">
             <img src={ team.image === null ? logoTeam : team.image } alt="Logo Team"/>
+            <strong>{ team.name }</strong>
           </div>
-          <strong>{ team.name }</strong>
           <span>{ team.player }</span>
-          <Switch />
+          <div className="switch">
+            <Switch render={({
+              active, setActive }) => (
+                <input onChange={() => setActive(!active)} type="checkbox" />
+                )
+              } />
+          </div>
         </div>
       ))}
     </>
   )
 }
 
-export default TeamsEngine;
+export default ListTeam;
